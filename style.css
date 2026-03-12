@@ -1,3 +1,13 @@
+:root {
+    --tg-bg: #17212b;
+    --tg-surface: rgba(35, 48, 64, 0.78);
+    --tg-surface-strong: rgba(26, 38, 50, 0.9);
+    --tg-accent: #2aabee;
+    --tg-accent-soft: rgba(42, 171, 238, 0.22);
+    --tg-text: #e6eef5;
+    --tg-text-muted: #9fb1c4;
+}
+
 div[data-test-id='FULLSCREEN_PLAYER_MODAL']::before {
     background: var(--background);
 }
@@ -20,7 +30,7 @@ div[data-test-id='FULLSCREEN_PLAYER_MODAL']::after {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: -2;
 
     filter: blur(var(--blur)) brightness(calc(var(--brightness) * var(--brightness-correction)));
 
@@ -30,6 +40,71 @@ div[data-test-id='FULLSCREEN_PLAYER_MODAL']::after {
     transition:
         opacity 0.5s ease-in-out,
         filter 0.5s ease-in-out;
+}
+
+div[data-test-id='FULLSCREEN_PLAYER_MODAL'] {
+    color: var(--tg-text);
+}
+
+div[data-test-id='FULLSCREEN_PLAYER_MODAL']::selection {
+    background: var(--tg-accent-soft);
+}
+
+div[data-test-id='FULLSCREEN_PLAYER_MODAL'] > * {
+    position: relative;
+    z-index: 1;
+}
+
+div[data-test-id='FULLSCREEN_PLAYER_MODAL']::after,
+div[data-test-id='FULLSCREEN_PLAYER_MODAL']::before {
+    box-shadow: inset 0 0 0 200vmax rgba(23, 33, 43, 0.58);
+}
+
+div[data-test-id='FULLSCREEN_PLAYER_MODAL'] [class*='PlayerBarDesktop_root'],
+div[data-test-id='FULLSCREEN_PLAYER_MODAL'] [class*='FullscreenPlayerDesktopControls_root'],
+div[data-test-id='FULLSCREEN_PLAYER_MODAL'] [class*='FullscreenPlayerDesktop_sliderWrapper'],
+div[data-test-id='FULLSCREEN_PLAYER_MODAL'] [class*='FullscreenPlayerDesktop_information'] {
+    background: var(--tg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    backdrop-filter: blur(14px);
+}
+
+div[data-test-id='FULLSCREEN_PLAYER_MODAL'] [class*='ControlsButton_button'],
+div[data-test-id='FULLSCREEN_PLAYER_MODAL'] button {
+    border-radius: 12px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+div[data-test-id='FULLSCREEN_PLAYER_MODAL'] [class*='ControlsButton_button']:hover,
+div[data-test-id='FULLSCREEN_PLAYER_MODAL'] button:hover {
+    background: var(--tg-accent-soft);
+}
+
+div[data-test-id='FULLSCREEN_PLAYER_MODAL'] [class*='ControlsButton_button']:active,
+div[data-test-id='FULLSCREEN_PLAYER_MODAL'] button:active {
+    transform: scale(0.97);
+}
+
+div[data-test-id='FULLSCREEN_PLAYER_MODAL'] [class*='Slider_root'] [class*='Slider_progress'],
+div[data-test-id='FULLSCREEN_PLAYER_MODAL'] [class*='ProgressBar_progress'] {
+    background: var(--tg-accent) !important;
+}
+
+div[data-test-id='FULLSCREEN_PLAYER_MODAL'] [class*='Slider_root'] [class*='Slider_thumb'] {
+    background: #ffffff;
+    border: 2px solid var(--tg-accent);
+}
+
+div[data-test-id='FULLSCREEN_PLAYER_MODAL'] [class*='decoTitle'],
+div[data-test-id='FULLSCREEN_PLAYER_MODAL'] [class*='title'] {
+    color: var(--tg-text);
+}
+
+div[data-test-id='FULLSCREEN_PLAYER_MODAL'] [class*='decoSubtitle'],
+div[data-test-id='FULLSCREEN_PLAYER_MODAL'] [class*='subtitle'],
+div[data-test-id='FULLSCREEN_PLAYER_MODAL'] [class*='meta'] {
+    color: var(--tg-text-muted);
 }
 
 .PlayQueue_root__ponhw::after,
