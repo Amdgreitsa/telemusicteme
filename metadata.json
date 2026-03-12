@@ -1,0 +1,13 @@
+{
+    "name": "BetterPlayer",
+    "version": "1.5.2",
+    "author": ["WolfySoCute", "forea.adoxid"],
+    "description": "Кастомизируемый плеер!",
+    "image": "image.png",
+    "banner": "banner.png",
+    "type": "script",
+    "css": "style.css",
+    "script": "script.js",
+    "tags": ["Script", "Customization", "Player"],
+    "fromPext": true
+}
