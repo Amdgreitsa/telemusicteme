@@ -1,0 +1,90 @@
+{
+  "sections": [
+    {
+      "title": "Фон плеера",
+      "items": [
+        {
+          "id": "playerBackground",
+          "name": "Фон из обложки",
+          "description": "Использовать обложку текущего трека как фон fullscreen-плеера",
+          "type": "button",
+          "bool": true,
+          "defaultParameter": true
+        },
+        {
+          "id": "backgroundImage",
+          "name": "Своя ссылка на фон",
+          "description": "URL изображения. Используется, когда выключен 'Фон из обложки'",
+          "type": "text",
+          "buttons": [
+            {
+              "id": "backgroundImageUrl",
+              "name": "URL",
+              "text": "",
+              "defaultParameter": ""
+            }
+          ]
+        },
+        {
+          "id": "autoBlackout",
+          "name": "Авто-затемнение",
+          "description": "Автоматически корректирует яркость фона для лучшей читаемости",
+          "type": "button",
+          "bool": true,
+          "defaultParameter": true
+        },
+        {
+          "id": "brightness",
+          "name": "Яркость",
+          "description": "Ручная регулировка яркости фона",
+          "type": "slider",
+          "value": 60,
+          "defaultParameter": 60,
+          "min": 20,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "id": "blur",
+          "name": "Размытие",
+          "description": "Сила blur для фона",
+          "type": "slider",
+          "value": 24,
+          "defaultParameter": 24,
+          "min": 0,
+          "max": 60,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "title": "Элементы управления",
+      "items": [
+        {
+          "id": "betterPlayer",
+          "name": "Кастомный плеер",
+          "description": "Включает улучшенную компоновку кнопок в fullscreen",
+          "type": "button",
+          "bool": true,
+          "defaultParameter": true
+        },
+        {
+          "id": "playerButtonsBackground",
+          "name": "Подложка блоков",
+          "description": "Добавляет полупрозрачную подложку к блокам текста, информации и очереди",
+          "type": "button",
+          "bool": true,
+          "defaultParameter": true
+        },
+        {
+          "id": "playerButtonsInvertBackground",
+          "name": "Инверсия подложки",
+          "description": "Инвертирует backdrop-эффект подложки (работает с включённой подложкой)",
+          "type": "button",
+          "bool": false,
+          "defaultParameter": false
+        }
+      ]
+    }
+  ]
+}
